@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+  width: 600px;
+  align-items: center;
+  color: #188bae;
+}
+input {
+  border: 2px solid #afd6d8;
+  outline: transparent;
+  border-radius: 8px;
+  margin-left: 10px;
+  height: 20px;
+}
+label {
+  margin-bottom: 10px;
+}
+h2 {
+  text-align: center;
+}
