@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { getContacts } from 'redux/selectors';
 import { useState } from 'react';
 
-export default function Form({ doubleContactName }) {
+export default function Form() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -15,10 +15,8 @@ export default function Form({ doubleContactName }) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // const nameToLower = name.toLowerCase();
-    // const findName = doubleContactName(nameToLower);
 
-    contacts.map(contact => contact.name !== name)
+    contacts.some(contact => contact.name === name)
       ? alert(`${name} is already in contacts.`)
       : dispatch(
           addContact({
