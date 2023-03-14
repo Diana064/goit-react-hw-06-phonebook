@@ -9,6 +9,7 @@ export default function App() {
   const [contacts, setContacts] = useState(() => {
     return JSON.parse(localStorage.getItem('contacts')) ?? [];
   });
+
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
@@ -43,9 +44,9 @@ export default function App() {
       );
     });
   };
-  const doubleContactName = name => {
-    return contacts.find(contact => contact.name.toLowerCase() === name);
-  };
+  // const doubleContactName = name => {
+  //   return contacts.find(contact => contact.name.toLowerCase() === name);
+  // };
   const deleteContact = event => {
     const leaveContacts = contacts.filter(contact => {
       return contact.name !== event.target.parentNode.id;
@@ -58,7 +59,7 @@ export default function App() {
       <h1>Phonebook</h1>
       <ContactForm
         onSubmit={formSubmitHandler}
-        doubleContactName={doubleContactName}
+        // doubleContactName={doubleContactName}
       />
       <h1>Contacts</h1>
       <Filter handleChange={handleChange} filter={filter} />
